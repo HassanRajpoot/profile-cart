@@ -6,9 +6,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  // Use state from localStorage if available for initial render
   const [activeCart, setActiveCart] = useState(false);
-  
   const cartItems = useSelector((state) => state.cart.cart);
   const totalQty = cartItems.reduce((totalQty, item) => totalQty + item.qty, 0);
   const totalPrice = cartItems.reduce(
@@ -27,9 +25,8 @@ const Cart = () => {
   return (
     <>
       <div
-        className={`fixed right-0 top-0 w-full lg:w-[20vw] h-full p-5 bg-white mb-3 ${
-          activeCart ? "translate-x-0" : "translate-x-full"
-        } transition-all duration-500 z-50`}
+        style={{backgroundColor:'white'}}
+        className={` fixed right-0 top-0 w-full lg:w-[20vw] h-full p-5 mb-3 ${activeCart ? "translate-x-0" : "translate-x-full"} transition-all duration-500 z-50`}
       >
         <div className="flex justify-between items-center my-3">
           <span className="text-xl font-bold text-gray-800">My Order</span>
@@ -67,11 +64,10 @@ const Cart = () => {
           </h3>
           <hr className="my-2" />
           <button
-            onClick={() => navigate("/success")}
             className={`bg-green-500 font-bold px-3 text-white py-2 rounded-lg w-full mb-5 ${
               cartItems.length === 0 ? 'opacity-50 cursor-not-allowed' : ''
             }`}
-            disabled={cartItems.length === 0}
+            disabled={true}
           >
             Checkout
           </button>
