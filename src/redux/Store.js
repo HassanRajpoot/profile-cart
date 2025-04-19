@@ -42,6 +42,7 @@ const persistConfig = {
     key: "root",
     storage,
     whitelist: ["theme", "cart", "profile"],
+    transforms: [encryptor]
 };
 const rootReducer = combineReducers({
     theme: themeReducer,
