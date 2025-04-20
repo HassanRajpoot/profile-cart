@@ -14,8 +14,7 @@ import {
     PURGE,
     REGISTER,
 } from "redux-persist";
-
-/* REDUX PERSISTENCE */
+  
 const createNoopStorage = () => {
     return {
         getItem(_key) {

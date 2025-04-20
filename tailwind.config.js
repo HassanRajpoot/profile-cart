@@ -11,7 +11,7 @@ const baseColors = [
   "purple","pink"
 ];
 const shadeMapping = {
-  "50": "900",
+  "150": "900",
   "100": "800",
   "200": "700",
   "300": "600",
@@ -20,7 +20,7 @@ const shadeMapping = {
   "600": "300",
   "700": "200",
   "800": "100",
-  "900": "50",
+  "900": "150",
 }
 const generateThemeObject = (
   colors, mapping, invert = false
